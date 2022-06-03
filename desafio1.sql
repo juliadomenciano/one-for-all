@@ -99,8 +99,8 @@ INSERT INTO SpotifyClone.albums(album, artist_id, release_date)
           ('Apparatus', 6, 2015);
           
 INSERT INTO SpotifyClone.musics(music, artist_id, album_id, duration_seconds)
-	VALUES  ('Soul For Us', 1, 1, 200),
-		      ('Reflections Of Magic', 1, 1, 163),
+	VALUES('Soul For Us', 1, 1, 200),
+		  ('Reflections Of Magic', 1, 1, 163),
           ('Dance With Her Own', 1, 1, 116),
           ('Troubles Of My Inner Fire', 1, 2, 203),
           ('Time Fireworks', 1, 2, 152),
@@ -108,7 +108,7 @@ INSERT INTO SpotifyClone.musics(music, artist_id, album_id, duration_seconds)
           ('Honey, So Do I', 2, 3, 207),
           ("Sweetie, Let's Go Wild", 2, 3, 139),
           ('She Knows', 2, 3, 244),
-          ('Fantasy For Me', 3, 4, 100),
+          ('Fantasy For Me', 3, 4, 100), -- 10
           ('Celebration Of More', 3, 4, 146),
           ('Rock His Everything', 3, 4, 223),
           ('Home Forever', 3, 4, 231),
@@ -118,7 +118,7 @@ INSERT INTO SpotifyClone.musics(music, artist_id, album_id, duration_seconds)
           ('Words Of Her Life', 4, 5, 185),
           ('Without My Streets', 4, 5, 176),
           ('Need Of The Evening', 4, 6, 190),
-          ('History Of My Roses', 4, 6, 222),
+          ('History Of My Roses', 4, 6, 222), -- 20
           ('Without My Love', 4, 6, 111),
           ('Walking and Game', 4, 6, 123),
           ('Young And Father', 4, 6, 197),
@@ -128,17 +128,17 @@ INSERT INTO SpotifyClone.musics(music, artist_id, album_id, duration_seconds)
           ("Honey, I'm A Lone Wolf", 5, 7, 150),
           ("She Thinks I Won't Stay Tonight", 5, 8, 166),
           ("He Heard You're Bad For Me", 5, 8, 154),
-		      ("He Hopes We Can't Stay", 5, 8, 210),
+		  ("He Hopes We Can't Stay", 5, 8, 210), -- 30
           ('I Know I Know', 5, 8, 117),
           ("He's Walking Away", 5, 9, 159),
           ("He's Trouble", 5, 9, 138),
           ("I Heard I Want To Bo Alone", 5, 9, 120),
           ('I Ride Alone', 5, 9, 151),
           ('Honey', 6, 10, 79),
-          ('You Cheated On Me', 6, 10, 79),
-          ("Wouldn't It Be Nice", 6, 10, 79),
-          ('Baby', 6, 10, 79),
-          ('You Make Me Feel So..', 6, 10, 79);
+          ('You Cheated On Me', 6, 10, 95),
+          ("Wouldn't It Be Nice", 6, 10, 213),
+          ('Baby', 6, 10, 136),
+          ('You Make Me Feel So..', 6, 10, 83);
           
 INSERT INTO SpotifyClone.followers(user_id, artist_id)
 	VALUES  (1,1),
