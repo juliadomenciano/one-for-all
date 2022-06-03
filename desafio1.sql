@@ -2,14 +2,14 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 
 
 CREATE TABLE SpotifyClone.subscription_plans(
-	  plan_id INT AUTO_INCREMENT,
+    plan_id INT AUTO_INCREMENT,
     plan VARCHAR(45) NOT NULL,
     pricing FLOAT(4,2) NOT NULL,
-	  CONSTRAINT PRIMARY KEY (plan_id)
+    CONSTRAINT PRIMARY KEY (plan_id)
 );
 
 CREATE TABLE SpotifyClone.users(
-	  user_id INT AUTO_INCREMENT,
+    user_id INT AUTO_INCREMENT,
     user_name VARCHAR(45) NOT NULL,
     age INT NOT NULL,
     plan_id INT NOT NULL,
@@ -18,41 +18,41 @@ CREATE TABLE SpotifyClone.users(
 );
 
 CREATE TABLE SpotifyClone.artists(
-	  artist_id INT AUTO_INCREMENT ,
+    artist_id INT AUTO_INCREMENT ,
     artist VARCHAR(45) NOT NULL,
     CONSTRAINT PRIMARY KEY (artist_id)
 );
 
 CREATE TABLE SpotifyClone.albums(
-	  album_id INT AUTO_INCREMENT,
+    album_id INT AUTO_INCREMENT,
     album VARCHAR(45) NOT NULL,
     artist_id INT NOT NULL,
     release_date YEAR NOT NULL,
-	  CONSTRAINT PRIMARY KEY (album_id),
-	  FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
+    CONSTRAINT PRIMARY KEY (album_id),
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id)
 );
 
 CREATE TABLE SpotifyClone.musics(
-	  music_id INT AUTO_INCREMENT,
+    music_id INT AUTO_INCREMENT,
     music VARCHAR(45) NOT NULL,
     artist_id INT NOT NULL,
     album_id INT NOT NULL,
     duration_seconds INT NOT NULL,
-	  CONSTRAINT PRIMARY KEY (music_id),
-	  FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
+    CONSTRAINT PRIMARY KEY (music_id),
+    FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
     FOREIGN KEY (album_id) REFERENCES albums (album_id)
 );
 
 CREATE TABLE SpotifyClone.followers(
-	  user_id INT NOT NULL,
-	  artist_id INT NOT NULL,
+    user_id INT NOT NULL,
+    artist_id INT NOT NULL,
     CONSTRAINT PRIMARY KEY (user_id, artist_id),
     FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE SpotifyClone.playback_history(
-	  music_id INT NOT NULL,
+    music_id INT NOT NULL,
     user_id INT NOT NULL,
     playback_date DATETIME NOT NULL,
     CONSTRAINT PRIMARY KEY (music_id, user_id),
@@ -62,13 +62,13 @@ CREATE TABLE SpotifyClone.playback_history(
 
 INSERT INTO SpotifyClone.subscription_plans(plan, pricing)
 	VALUES  ('gratuito', 0.00),
-		      ('familiar', 7.99),
+          ('familiar', 7.99),
           ('universitário', 5.99),
           ('pessoal', 6.99);
           
 INSERT INTO SpotifyClone.users(user_name, age, plan_id)
 	VALUES  ('Thati', 23, 1),
-		      ('Cintia', 35, 2),
+          ('Cintia', 35, 2),
           ('Bill', 20, 3),
           ('Roger', 45, 4),
           ('Norman', 58, 4),
@@ -80,7 +80,7 @@ INSERT INTO SpotifyClone.users(user_name, age, plan_id)
 
 INSERT INTO SpotifyClone.artists(artist)
 	VALUES  ('Walter Phoenix'),
-		      ('Peter Strong'),
+		  ('Peter Strong'),
           ('Lance Day'),
           ('Freedie Shannon'),
           ('Tyler Isle'),
@@ -88,7 +88,7 @@ INSERT INTO SpotifyClone.artists(artist)
 		 
 INSERT INTO SpotifyClone.albums(album, artist_id, release_date)
 	VALUES  ('Envious', 1, 1990),
-		      ('Exuberant', 1, 1993),
+		  ('Exuberant', 1, 1993),
           ('Hallowed', 2, 1995),
           ('Incandescent', 3, 1998),
           ('Temporary Culture', 4, 2001),
@@ -166,7 +166,7 @@ INSERT INTO SpotifyClone.followers(user_id, artist_id)
           
 INSERT INTO SpotifyClone.playback_history(music_id, user_id, playback_date)
 	VALUES(1, 5, '2020-11-10 13:52:27'),
-		      (2, 4, '2021-08-15 17:10:10'),
+		  (2, 4, '2021-08-15 17:10:10'),
           (3, 3, '2020-12-05 18:38:30'),
           (4, 7, '2020-07-27 12:52:58'),
           (5, 7, '2018-05-09 22:30:49'),
@@ -186,7 +186,7 @@ INSERT INTO SpotifyClone.playback_history(music_id, user_id, playback_date)
           (20, 10, '2017-02-06 08:21:34'),
           (21, 10, '2017-12-04 05:33:43'),
           (21, 2, '2020-10-09 12:27:48'),
-		      (22, 6, '2018-05-29 14:56:41'),
+		  (22, 6, '2018-05-29 14:56:41'),
           (23, 1, '2020-03-06 11:22:33'),
           (24, 2, '2020-05-16 06:16:22'),
           (25, 1, '2020-05-02 05:30:35'),
