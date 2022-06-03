@@ -44,20 +44,18 @@ CREATE TABLE SpotifyClone.musics(
 );
 
 CREATE TABLE SpotifyClone.followers(
-	  follow_id INT AUTO_INCREMENT,
 	  user_id INT NOT NULL,
 	  artist_id INT NOT NULL,
-    CONSTRAINT PRIMARY KEY (follow_id),
+    CONSTRAINT PRIMARY KEY (user_id, artist_id),
     FOREIGN KEY (artist_id) REFERENCES artists (artist_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
 CREATE TABLE SpotifyClone.playback_history(
-	  history_id INT AUTO_INCREMENT,
 	  music_id INT NOT NULL,
     user_id INT NOT NULL,
     playback_date DATETIME NOT NULL,
-    CONSTRAINT PRIMARY KEY (history_id),
+    CONSTRAINT PRIMARY KEY (music_id, user_id),
     FOREIGN KEY (music_id) REFERENCES musics (music_id),
     FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
