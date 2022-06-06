@@ -4,7 +4,7 @@ CREATE DATABASE IF NOT EXISTS SpotifyClone;
 CREATE TABLE SpotifyClone.subscription_plans(
     plan_id INT AUTO_INCREMENT,
     plan VARCHAR(45) NOT NULL,
-    pricing FLOAT(4,2) NOT NULL,
+    pricing DECIMAL(4,2) NOT NULL,
     CONSTRAINT PRIMARY KEY (plan_id)
 );
 
@@ -89,7 +89,7 @@ INSERT INTO SpotifyClone.artists(artist)
 INSERT INTO SpotifyClone.albums(album, artist_id, release_date)
 	VALUES  ('Envious', 1, 1990),
 		  ('Exuberant', 1, 1993),
-          ('Hallowed', 2, 1995),
+          ('Hallowed Steam', 2, 1995),
           ('Incandescent', 3, 1998),
           ('Temporary Culture', 4, 2001),
           ('Library of liberty', 4, 2003),
